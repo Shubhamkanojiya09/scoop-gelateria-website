@@ -1,192 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Scoop Gelateria | Premium Italian Ice Cream</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+Create a complete, responsive, single-page cafe website for a premium Italian ice cream shop named “Scoop Gelateria – Premium Italia” located in Mulund West, Mumbai.
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #fffaf5;
-      color: #2c2c2c;
-    }
+TECH REQUIREMENTS:
+- Use only HTML, CSS, and minimal JavaScript
+- No frameworks
+- Clean, beginner-friendly code
+- Must run directly on GitHub Pages
+- All content in one file: index.html
+- Use internal CSS inside <style> tag
+- Smooth scrolling enabled
+- Mobile-first and responsive design
 
-    header { 
-      font-family: 'Playfair Display', serif;
-      background: #3b1f0f;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
+DESIGN THEME:
+- Premium, warm brown & cream color palette
+- Elegant, modern cafe aesthetic
+- Soft shadows, rounded cards
+- Google Font like Poppins or Playfair Display
+- Minimal animations (hover effects)
 
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-      letter-spacing: 1px;
-    }
+WEBSITE SECTIONS (IN THIS ORDER):
 
-    header p {
-      margin-top: 5px;
-      font-size: 16px;
-      opacity: 0.9;
-    }
+1) HEADER / NAVBAR
+- Logo text: “Scoop Gelateria”
+- Menu items: Home, About, Gallery, Find Us, Contact
+- Sticky navbar
 
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+2) HERO SECTION
+- Big headline: “Premium Italian Ice Cream in Mulund West”
+- Subtext: “Handcrafted gelato, thick shakes & sundaes made with love”
+- CTA button: “Visit Us Today”
 
-    .about {
-      text-align: center;
-    }
+3) ABOUT US
+Text:
+“Scoop Gelateria is a premium Italian ice cream destination in Mulund West, serving handcrafted gelato, thick shakes, and sundaes made with love, quality ingredients, and authentic flavors.”
 
-    .about h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
+4) GALLERY
+- Grid layout
+- Use 6 placeholder image URLs (ice cream / gelato)
+- Images should look aesthetic and premium
 
-    .about p {
-      font-size: 17px;
-      line-height: 1.6;
-    }
+5) INFO CARDS (3 cards in one row)
+Card 1 – Address:
+Shop No 2, Moreshwar Tower,
+MG Road, Mulund West,
+Mumbai – 400080
 
-    .info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
+Card 2 – Timings:
+Mon – Sat: 10:00 AM – 12:30 AM
+Sunday: 10:00 AM – 12:30 AM
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
+Card 3 – Contact:
+Phone: 097690 90200
+WhatsApp Available
 
-    .card h3 {
-      margin-top: 0;
-      color: #3b1f0f;
-    }
+6) FIND US (MAP)
+- Embed Google Maps iframe
+- Location: Scoop Gelateria, Mulund West, Mumbai
 
-    footer {
-      background: #3b1f0f;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-    }
-    section {
-  animation: fadeUp 0.8s ease-in-out;
-}
+7) FOOTER
+- Text: “© 2026 Scoop Gelateria | Crafted with ❤️”
+- Dark brown background
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-  </style>
-</head>
+EXTRA:
+- Add hover effects on buttons and cards
+- Use semantic HTML
+- Comment the code properly
+- Ensure text is easy to edit later
 
-<body>
-
-<header id="home">
-  <h1>Scoop Gelateria</h1>
-  <p>Premium Italian Ice Cream</p>
-</header>
-
-<section class="about">
-  <section class="about">
-  <h2>Order & Connect</h2>
-  <p>
-    <a href="https://www.zomato.com" target="_blank" style="text-decoration:none;">
-      <button style="padding:12px 20px;margin:10px;background:#e23744;color:white;border:none;border-radius:6px;font-size:16px;">
-        Order on Zomato
-      </button>
-    </a>
-
-    <a href="https://wa.me/919769090200" target="_blank" style="text-decoration:none;">
-      <button style="padding:12px 20px;margin:10px;background:#25D366;color:white;border:none;border-radius:6px;font-size:16px;">
-        WhatsApp Us
-      </button>
-    </a>
-  </p>
-</section>
-  <section id="gallery">
-  <h2 style="text-align:center;">Our Flavours & Vibes</h2>
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px;">
-    
-    <img src="https://images.unsplash.com/photo-1505253216365-67c8a45d6f94" style="width:100%;border-radius:10px;">
-    <img src="https://images.unsplash.com/photo-1497051788611-2c64812349fa" style="width:100%;border-radius:10px;">
-    <img src="https://images.unsplash.com/photo-1511910849309-0dffb8785146" style="width:100%;border-radius:10px;">
-    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb" style="width:100%;border-radius:10px;">
-
-  </div>
-</section>
-  <h2>About Us</h2>
-  <p>
-    Scoop Gelateria is a premium Italian ice cream destination in Mulund West,
-    serving handcrafted gelato, thick shakes, and sundaes made with love,
-    quality ingredients, and authentic flavors.
-  </p>
-</section>
-
-<section class="info" id="contact">
-  <div class="card">
-    <h3>📍 Address</h3>
-    <p>
-      Shop No 2, Moreshwar Tower,<br>
-      MG Road, Mulund West,<br>
-      Mumbai – 400080
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>⏰ Timings</h3>
-    <p>
-      Mon – Sat: 10:00 AM – 12:30 AM<br>
-      Sunday: 10:00 AM – 12:30 AM
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>📞 Contact</h3>
-    <p>
-      Phone: 097690 90200<br>
-      WhatsApp available
-    </p>
-  </div>
-</section>
-
-<footer>
-  © 2026 Scoop Gelateria | Crafted with ❤️
-  <section id="location">
-  <h2 style="text-align:center;">Find Us</h2>
-
-  <div style="margin-top:30px;border-radius:10px;overflow:hidden;">
-    <iframe 
-      src="https://www.google.com/maps?q=Scoop%20Gelateria%20Mulund&output=embed"
-      width="100%" 
-      height="350" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy">
-    </iframe>
-  </div>
-</section>
-</footer>
-
-</body>
-</html>
+OUTPUT FORMAT:
+- Provide ONLY the full final index.html code
+- No explanations, no markdown, no extra text
