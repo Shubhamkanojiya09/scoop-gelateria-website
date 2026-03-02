@@ -1,156 +1,350 @@
-Create a high-end, cinematic, premium single-page website for an Italian ice cream café named:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scoop Gelateria | Premium Italian Ice Cream in Mulund West</title>
+  <meta name="description" content="Scoop Gelateria is a premium Italian ice cream café in Mulund West, Mumbai, serving handcrafted gelato, thick shakes, and indulgent sundaes." />
 
-“Scoop Gelateria – Premium Italia”
-Location: Mulund West, Mumbai
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-This website should feel:
-- Luxurious
-- Warm
-- Italian café inspired
-- Aesthetic and Instagram-worthy
-- Smooth, calm, and elegant
+  <style>
+    :root {
+      --brown: #3b1f0f;
+      --coffee: #5a2e1a;
+      --cream: #fffaf5;
+      --beige: #f3e7db;
+      --text: #2c2c2c;
+    }
 
-TECH STACK (STRICT):
-- Pure HTML, CSS, and vanilla JavaScript only
-- One single file: index.html
-- Internal CSS using <style>
-- Internal JS using <script>
-- Must run perfectly on GitHub Pages
-- No frameworks, no external JS libraries
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-DESIGN LANGUAGE:
-- Color palette: chocolate brown, coffee, beige, cream, soft gold
-- Typography:
-  - Headings: Playfair Display or similar serif
-  - Body: Poppins or Inter
-- Use glassmorphism lightly (blurred cards)
-- Soft gradients, subtle textures
-- Smooth scroll behavior
-- Page should feel alive but not noisy
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-ANIMATIONS (VERY IMPORTANT):
-- Slow fade-in on scroll for every section
-- Text reveal animations (slide + opacity)
-- Hover micro-interactions on buttons & cards
-- Image zoom on hover in gallery
-- Navbar appears smoothly on load
-- Parallax-like slow movement for hero section
-- Use CSS animations + Intersection Observer (JS)
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(59,31,15,0.95);
+      backdrop-filter: blur(6px);
+    }
 
-WEBSITE STRUCTURE (ORDER MATTERS):
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-────────────────────────
-1) PRELOADER (OPTIONAL BUT PREFERRED)
-────────────────────────
-- Minimal loader with text: “Scoop Gelateria”
-- Fades out smoothly
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: #fff;
+    }
 
-────────────────────────
-2) STICKY NAVBAR
-────────────────────────
-- Transparent initially
-- Turns solid brown on scroll
-- Logo text: Scoop Gelateria
-- Menu: Home | About | Gallery | Find Us | Contact
-- Smooth scroll on click
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 15px;
+      transition: opacity 0.3s;
+    }
 
-────────────────────────
-3) HERO SECTION (FULL SCREEN)
-────────────────────────
-- Large cinematic background (ice cream / café aesthetic)
-- Dark overlay gradient
-- Headline (animated):
-  “A Scoop of Italy in Every Bite”
-- Subheading:
-  “Premium handcrafted gelato, thick shakes & sundaes in Mulund West”
-- CTA button:
-  “Visit the Gelateria”
-- Slow floating animation on text
+    .nav-links a:hover {
+      opacity: 0.75;
+    }
 
-────────────────────────
-4) ABOUT SECTION
-────────────────────────
-- Elegant centered layout
-- Animated divider line
-- Text:
-  “Scoop Gelateria is a premium Italian ice cream destination in Mulund West, serving handcrafted gelato, thick shakes, and sundaes made with love, quality ingredients, and authentic flavors.”
-- Background: light cream
-- Scroll reveal animation
+    /* HERO */
+    header {
+      min-height: 100vh;
+      background: linear-gradient(
+          rgba(0,0,0,0.45),
+          rgba(0,0,0,0.45)
+        ),
+        url("https://images.unsplash.com/photo-1563805042-7684c019e1cb") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 40px 20px;
+    }
 
-────────────────────────
-5) SIGNATURE FLAVOURS / EXPERIENCE
-────────────────────────
-- 3 animated cards
-  - Handcrafted Gelato
-  - Thick Shakes
-  - Sundaes & Desserts
-- Icons or emojis allowed 🍨🥤🍫
-- Hover lift + glow effect
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      margin-bottom: 15px;
+      animation: fadeUp 1s ease forwards;
+    }
 
-────────────────────────
-6) GALLERY (IMPORTANT)
-────────────────────────
-- Masonry-style grid
-- 6–8 aesthetic ice cream images (placeholder URLs)
-- Hover:
-  - Slow zoom
-  - Soft overlay
-  - Caption fade-in
-- Section title animation on scroll
+    header p {
+      font-size: 18px;
+      max-width: 650px;
+      margin: auto;
+      animation: fadeUp 1.3s ease forwards;
+    }
 
-────────────────────────
-7) INFO SECTION (CARDS)
-────────────────────────
-Three premium glassmorphism cards:
+    header .cta {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 14px 28px;
+      background: var(--brown);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 16px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeUp 1.6s ease forwards;
+    }
 
-📍 Address:
-Shop No 2, Moreshwar Tower,
-MG Road, Mulund West,
-Mumbai – 400080
+    header .cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
 
-⏰ Timings:
-Mon – Sat: 10:00 AM – 12:30 AM
-Sunday: 10:00 AM – 12:30 AM
+    /* SECTIONS */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
 
-📞 Contact:
-Phone: 097690 90200
-WhatsApp Available
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-────────────────────────
-8) FIND US – MAP
-────────────────────────
-- Google Maps iframe embed
-- Rounded container
-- Soft shadow
-- Section title: “Find Us in Mulund”
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--brown);
+    }
 
-────────────────────────
-9) CALL TO ACTION
-────────────────────────
-- Elegant centered text:
-  “Life is better with gelato.”
-- Button:
-  “Get Directions”
+    section p {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      font-size: 17px;
+    }
 
-────────────────────────
-10) FOOTER
-────────────────────────
-- Dark chocolate background
-- Text:
+    /* CARDS */
+    .cards {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--coffee);
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 14px;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.08);
+    }
+
+    /* MAP */
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+      border-radius: 14px;
+      margin-top: 30px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--brown);
+      color: white;
+      text-align: center;
+      padding: 18px;
+      font-size: 14px;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">Scoop Gelateria</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#location">Find Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="home">
+  <div>
+    <h1>A Scoop of Italy in Every Bite</h1>
+    <p>Premium handcrafted gelato, indulgent sundaes, and thick shakes made with love in the heart of Mulund West.</p>
+    <a href="#location" class="cta">Visit the Gelateria</a>
+  </div>
+</header>
+
+<section id="about">
+  <h2>Our Story</h2>
+  <p>
+    Scoop Gelateria is a premium Italian ice cream destination in Mulund West, Mumbai.
+    We bring together authentic recipes, quality ingredients, and a passion for dessert
+    to craft gelato, shakes, and sundaes that feel indulgent, comforting, and unforgettable.
+  </p>
+</section>
+
+<section id="menu">
+  <h2>Customer Favourites</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>🍨 Handcrafted Gelato</h3>
+      <p>Rich, creamy, and slow-churned to capture authentic Italian flavors.</p>
+    </div>
+    <div class="card">
+      <h3>🥤 Thick Shakes</h3>
+      <p>Perfectly blended indulgence, made with premium ingredients.</p>
+    </div>
+    <div class="card">
+      <h3>🍫 Sundaes & Desserts</h3>
+      <p>Decadent combinations designed to satisfy every sweet craving.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Flavours & Vibes</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1505253216365-67c8a45d6f94" alt="Gelato scoop">
+    <img src="https://images.unsplash.com/photo-1497051788611-2c64812349fa" alt="Ice cream dessert">
+    <img src="https://images.unsplash.com/photo-1511910849309-0dffb8785146" alt="Sundae">
+    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb" alt="Ice cream shop vibe">
+    <img src="https://images.unsplash.com/photo-1589712235274-59dbf0efed91" alt="Chocolate gelato">
+    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341" alt="Dessert bowl">
+  </div>
+</section>
+
+<section id="location">
+  <h2>Find Us</h2>
+  <iframe src="https://www.google.com/maps?q=Scoop%20Gelateria%20Mulund&output=embed"></iframe>
+</section>
+
+<section id="contact">
+  <h2>Contact & Timings</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>📍 Address</h3>
+      <p>
+        Shop No 2, Moreshwar Tower,<br>
+        MG Road, Mulund West,<br>
+        Mumbai – 400080
+      </p>
+    </div>
+    <div class="card">
+      <h3>⏰ Timings</h3>
+      <p>
+        Mon – Sat: 10:00 AM – 12:30 AM<br>
+        Sunday: 10:00 AM – 12:30 AM
+      </p>
+    </div>
+    <div class="card">
+      <h3>📞 Contact</h3>
+      <p>
+        Phone: 097690 90200<br>
+        WhatsApp Available
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
   © 2026 Scoop Gelateria | Crafted with ❤️
-- Subtle fade-in animation
+</footer>
 
-────────────────────────
-EXTRA REQUIREMENTS:
-────────────────────────
-- Fully responsive (mobile / tablet / desktop)
-- Use CSS variables for colors
-- Well-commented code
-- Easy to edit text & images later
-- Professional structure & indentation
+<script>
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
 
-OUTPUT RULES (STRICT):
-- Output ONLY final complete index.html
-- No explanations
-- No markdown
-- No extra text
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
