@@ -3,176 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scoop Gelateria | Premium Italian Ice Cream Café in Mulund</title>
-<meta name="description" content="Scoop Gelateria is a premium Italian ice cream café in Mulund West, Mumbai, offering handcrafted gelato, vegan sorbetto, sundaes, shakes and falooda.">
+<title>Scoop Gelateria | Premium Italian Ice Cream</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-:root{
-  --cream:#fff7ef;
-  --beige:#f3e6d8;
-  --brown:#3a2416;
-  --gold:#c9a24d;
+html {
+    scroll-behavior: smooth;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Poppins',sans-serif;
-  background:var(--cream);
-  color:var(--brown);
-  scroll-behavior:smooth;
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #333;
 }
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,247,239,0.95);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 48px;
-  box-shadow:0 4px 20px rgba(0,0,0,0.08);
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #fff;
+    position: fixed;
+    width: 84%;
+    top: 0;
+    z-index: 1000;
 }
-header img{height:52px}
-nav a{
-  margin-left:28px;
-  text-decoration:none;
-  color:var(--brown);
-  font-weight:500;
+
+.logo img {
+    height: 55px;
 }
-.hero{
-  min-height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.25)),
-    url("assets/scoops1.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  padding:0 8%;
-  color:#fff;
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: 0.3s;
 }
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:3.8rem;
-  line-height:1.1;
+
+nav a:hover {
+    color: #f8a8c6;
 }
-.hero p{
-  margin:18px 0 28px;
-  max-width:520px;
-  font-size:1.05rem;
+
+.btn {
+    background: #f8a8c6;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
 }
-.hero button{
-  padding:14px 36px;
-  border:none;
-  border-radius:30px;
-  background:var(--gold);
-  color:#fff;
-  font-size:1rem;
-  cursor:pointer;
-  transition:.3s;
+
+.btn:hover {
+    background: #ff8fbc;
 }
-.hero button:hover{transform:translateY(-2px);opacity:.9}
-section{
-  padding:90px 8%;
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(to right, #fff 50%, #ffeaf2 50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
 }
-section h2{
-  font-family:'Playfair Display',serif;
-  font-size:2.6rem;
-  text-align:center;
-  margin-bottom:46px;
+
+.hero-text {
+    max-width: 500px;
 }
-.about p{
-  max-width:800px;
-  margin:0 auto;
-  text-align:center;
-  color:#5a3a28;
-  font-size:1.05rem;
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: #222;
 }
-.menu-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:32px;
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #666;
 }
-.menu-card{
-  background:#fff;
-  border-radius:18px;
-  padding:26px;
-  box-shadow:0 14px 40px rgba(0,0,0,0.08);
-  transition:.4s;
+
+.hero img {
+    max-width: 450px;
 }
-.menu-card:hover{transform:translateY(-8px)}
-.menu-card h3{
-  color:var(--gold);
-  margin-bottom:12px;
+
+.flavours {
+    padding: 100px 8%;
+    text-align: center;
+    background: #fff;
 }
-.menu-card ul{
-  list-style:none;
-  font-size:0.95rem;
-  color:#5b3a28;
+
+.flavours h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin-bottom: 50px;
 }
-.menu-card li{margin-bottom:6px}
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:24px;
+
+.cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-.gallery img{
-  width:100%;
-  border-radius:18px;
-  transition:.5s;
+
+.card {
+    background: #ffeaf2;
+    padding: 30px;
+    border-radius: 20px;
+    width: 280px;
+    transition: 0.4s;
 }
-.gallery img:hover{transform:scale(1.06)}
-.location iframe{
-  width:100%;
-  height:360px;
-  border:0;
-  border-radius:18px;
+
+.card i {
+    font-size: 40px;
+    color: #f8a8c6;
+    margin-bottom: 20px;
 }
-.contact p{
-  text-align:center;
-  font-size:1.05rem;
-  color:#5a3a28;
+
+.card h3 {
+    margin-bottom: 10px;
 }
-footer{
-  background:#1f140d;
-  color:#cfc0b3;
-  text-align:center;
-  padding:34px;
-  font-size:0.9rem;
+
+.card:hover {
+    transform: translateY(-10px);
+    background: #ffd6e6;
 }
-.float-icons{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-  z-index:1000;
+
+.experience {
+    padding: 100px 8%;
+    background: #f8a8c6;
+    color: white;
+    text-align: center;
 }
-.float-icons a{
-  width:54px;
-  height:54px;
-  border-radius:50%;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:24px;
-  box-shadow:0 10px 28px rgba(0,0,0,0.25);
-  text-decoration:none;
+
+.experience h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin-bottom: 20px;
 }
-.fade{
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s;
+
+.experience p {
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 30px;
 }
-.fade.show{
-  opacity:1;
-  transform:none;
+
+footer {
+    background: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
 }
-@media(max-width:768px){
-  header{padding:12px 22px}
-  nav a{margin-left:16px;font-size:0.9rem}
-  .hero h1{font-size:2.6rem}
+
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        background: #fff;
+        padding-top: 120px;
+    }
+
+    header {
+        width: 100%;
+        padding: 20px 5%;
+    }
+
+    .hero img {
+        margin-top: 40px;
+        max-width: 300px;
+    }
+
+    nav {
+        display: none;
+    }
 }
 </style>
 </head>
@@ -180,126 +190,62 @@ footer{
 <body>
 
 <header>
-  <img src="assets/scoops.jpg" alt="Scoop Gelateria Logo">
-  <nav>
-    <a href="#about">About</a>
-    <a href="#menu">Menu</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <div class="logo">
+        <img src="https://i.ibb.co/sdWXr6PS/logo.png" alt="Scoop Gelateria Logo">
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#flavours">Flavours</a>
+        <a href="#experience">Our Story</a>
+    </nav>
+
+    <a href="#experience" class="btn">Visit Us</a>
 </header>
 
-<section class="hero">
-  <div>
-    <h1>Where Gelato<br>Feels Like Luxury</h1>
-    <p>Handcrafted Italian gelato, vegan sorbetto and indulgent desserts — loved by Mulund.</p>
-    <button onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">View Menu</button>
-  </div>
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1>Artisan Italian Gelato</h1>
+        <p>Handcrafted daily with the finest ingredients. Experience creamy perfection in every scoop at Scoop Gelateria.</p>
+        <a href="#flavours" class="btn">Explore Flavours</a>
+    </div>
+
+    <img src="https://i.ibb.co/sdWXr6PS/logo.png" alt="Gelato Feature">
 </section>
 
-<section id="about" class="about fade">
-  <h2>About Scoop Gelateria</h2>
-  <p>
-    Scoop Gelateria brings the art of Italian ice cream to Mulund West. Every scoop is crafted with
-    premium ingredients, rich textures and authentic flavours — from classic gelato to vegan sorbetto
-    and decadent sundaes. A local favourite for moments worth celebrating.
-  </p>
+<section class="flavours" id="flavours">
+    <h2>Our Signature Flavours</h2>
+
+    <div class="cards">
+        <div class="card">
+            <i class="fa-solid fa-ice-cream"></i>
+            <h3>Strawberry Velvet</h3>
+            <p>Fresh strawberries blended into silky smooth gelato.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-leaf"></i>
+            <h3>Pistachio Royale</h3>
+            <p>Authentic Sicilian pistachios for a nutty indulgence.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-mug-hot"></i>
+            <h3>Hazelnut Mocha</h3>
+            <p>Rich espresso infused with roasted hazelnuts.</p>
+        </div>
+    </div>
 </section>
 
-<section id="menu">
-  <h2>Our Menu</h2>
-  <div class="menu-grid fade">
-    <div class="menu-card">
-      <h3>Classic Gelato (Low Fat)</h3>
-      <ul>
-        <li>Single ₹60 · Small Tub ₹150</li>
-        <li>Regular Tub ₹300 · Large Tub ₹500</li>
-        <li>Naked, Cookies & Cream, Alphonso Mango, Mud Chocolate</li>
-      </ul>
-    </div>
-    <div class="menu-card">
-      <h3>Premium Gelato</h3>
-      <ul>
-        <li>Single ₹90 · Small Tub ₹220</li>
-        <li>Regular Tub ₹400 · Large Tub ₹650</li>
-        <li>Lotus Biscoff, Swiss Vanilla, Fudge Brownie</li>
-      </ul>
-    </div>
-    <div class="menu-card">
-      <h3>Extra Premium Gelato</h3>
-      <ul>
-        <li>Single ₹110 · Small Tub ₹270</li>
-        <li>Regular Tub ₹500 · Large Tub ₹750</li>
-        <li>Belgian Chocolate, Hazelnut Praline</li>
-      </ul>
-    </div>
-    <div class="menu-card">
-      <h3>Sorbetto (Vegan)</h3>
-      <ul>
-        <li>Fruit Salsa, Mango & Orange, Tangy Berry</li>
-        <li>Single ₹110 · Small Tub ₹270</li>
-      </ul>
-    </div>
-    <div class="menu-card">
-      <h3>Thick Shakes & Gelato Shakes</h3>
-      <ul>
-        <li>Oreo, Roasted Almond, Lotus Biscoff</li>
-        <li>From ₹160</li>
-      </ul>
-    </div>
-    <div class="menu-card">
-      <h3>Sundaes & Falooda</h3>
-      <ul>
-        <li>Brownie Blast, Oreo Delight</li>
-        <li>Shahi Kesar, Mango Falooda</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="gallery">
-  <h2>Gallery</h2>
-  <div class="gallery fade">
-    <img src="assets/scoops1.jpg" alt="Gelato">
-    <img src="assets/scoops2.jpg" alt="Desserts">
-    <img src="assets/scoops3.jpg" alt="Ice Cream Cafe">
-  </div>
-</section>
-
-<section class="location fade">
-  <h2>Find Us</h2>
-  <iframe src="https://www.google.com/maps?q=Scoop+Gelateria+Mulund+West&output=embed" loading="lazy"></iframe>
-</section>
-
-<section id="contact" class="contact fade">
-  <h2>Order & Contact</h2>
-  <p>
-    📍 Mulund West, Mumbai<br>
-    🕒 Open till 12:30 AM<br>
-    📞 Call or WhatsApp to order your favourites
-  </p>
+<section class="experience" id="experience">
+    <h2>A Taste of Italy in Every Scoop</h2>
+    <p>At Scoop Gelateria, we blend tradition and creativity to deliver a playful yet luxurious dessert experience. Every batch is crafted with passion, authenticity, and love.</p>
+    <a href="#" class="btn" style="background:white;color:#f8a8c6;">Order Now</a>
 </section>
 
 <footer>
-  © 2026 Scoop Gelateria · Crafted for true dessert lovers
+    © 2026 Scoop Gelateria. All Rights Reserved.
 </footer>
-
-<div class="float-icons">
-  <a href="https://wa.me/91XXXXXXXXXX" aria-label="WhatsApp">🟢</a>
-  <a href="tel:+91XXXXXXXXXX" aria-label="Call">📞</a>
-  <a href="http://zoma.to/r/21929833" aria-label="Zomato">🍨</a>
-</div>
-
-<script>
-const f=document.querySelectorAll('.fade');
-window.addEventListener('scroll',()=>{
-  f.forEach(el=>{
-    if(el.getBoundingClientRect().top<window.innerHeight-100){
-      el.classList.add('show');
-    }
-  });
-});
-</script>
 
 </body>
 </html>
