@@ -1,227 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scoop Gelateria | Premium Italian Ice Cream</title>
+Act as a senior UI/UX designer, frontend developer, and brand copywriter.
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+Build a fully working, premium-quality static website for a café using ONLY HTML, CSS, and minimal JavaScript.
 
-<style>
-:root{
-  --cream:#fff6ec;
-  --rose:#e7a6a1;
-  --dark:#2b2b2b;
-  --gold:#c9a24d;
-}
+Business Name: Scoop Gelateria  
+Business Type: Premium Italian Ice Cream Café  
+Location: Mulund West, Mumbai, India  
 
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family:'Poppins',sans-serif;
-  background:var(--cream);
-  color:var(--dark);
-  line-height:1.6;
-}
+TECH REQUIREMENTS (VERY IMPORTANT):
+- Use ONLY HTML, CSS, and vanilla JavaScript
+- Everything must be inside ONE file: index.html
+- Code must be directly pasteable into GitHub and work on GitHub Pages
+- No external frameworks or paid libraries
+- Use Google Fonts only (free)
+- Fully responsive (mobile + desktop)
+- No GST mentioned anywhere
+- Use ₹ (Indian Rupee) symbol correctly
 
-/* HEADER */
-header{
-  position:fixed;
-  top:0;width:100%;
-  background:rgba(255,246,236,0.95);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 50px;
-  z-index:1000;
-}
-header img{height:55px;}
-nav a{
-  margin-left:25px;
-  text-decoration:none;
-  color:var(--dark);
-  font-weight:500;
-}
+FOLDER & IMAGE USAGE:
+- All images are stored inside a folder named "assets"
+- Logo path: assets/scoops.jpg
+- Other images: assets/scoops1.jpg, assets/scoops2.jpg, assets/scoops3.jpg (use them logically in hero, menu, gallery)
+- Do NOT reference images outside the assets folder
 
-/* HERO */
-.hero{
-  height:100vh;
-  background:
-  linear-gradient(to right, rgba(0,0,0,0.45), rgba(0,0,0,0.1)),
-  url("assets/images/hero1.jpg") center/cover;
-  display:flex;
-  align-items:center;
-  padding-left:60px;
-  color:white;
-}
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:4rem;
-}
-.hero p{max-width:500px;margin:20px 0;}
-.hero button{
-  padding:14px 34px;
-  background:var(--rose);
-  border:none;
-  font-size:16px;
-  cursor:pointer;
-  border-radius:30px;
-}
+DESIGN & STYLE:
+- Premium, elegant, luxury café feel
+- Color palette: cream, beige, chocolate brown, soft gold
+- High-end typography using Google Fonts (Playfair Display + Poppins)
+- Soft shadows, rounded cards, proper spacing
+- Smooth animations (fade-in, slide-up, hover effects)
+- Classy, minimal, non-cluttered layout
 
-/* SECTION */
-section{padding:90px 60px;}
-section h2{
-  font-family:'Playfair Display',serif;
-  font-size:2.6rem;
-  margin-bottom:40px;
-  text-align:center;
-}
+SECTIONS TO INCLUDE (IN THIS ORDER):
 
-/* MENU */
-.menu-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-}
-.menu-card{
-  background:white;
-  border-radius:18px;
-  padding:25px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.08);
-  transition:.4s;
-}
-.menu-card:hover{
-  transform:translateY(-8px);
-}
-.menu-card h3{
-  color:var(--rose);
-  margin-bottom:10px;
-}
-.menu-card p{font-size:14px;color:#555;}
+1. Sticky Header
+   - Logo image (from assets folder)
+   - Navigation links with smooth scroll
 
-/* FLOATING BUTTONS */
-.floating{
-  position:fixed;
-  right:20px;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  bottom:20px;
-}
-.floating a{
-  background:white;
-  width:55px;height:55px;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:26px;
-  text-decoration:none;
-  box-shadow:0 10px 30px rgba(0,0,0,.2);
-}
+2. Hero Section
+   - Full-width background using assets image
+   - Emotional, premium headline
+   - Short luxury café description
+   - Call-to-action button (View Menu / Order Now)
 
-/* FOOTER */
-footer{
-  background:#1f1f1f;
-  color:#bbb;
-  padding:40px;
-  text-align:center;
-}
+3. About Section
+   - Brand story written in premium, warm language
+   - Emphasize quality, freshness, Italian gelato, local favorite
 
-/* ANIMATIONS */
-.fade{
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s;
-}
-.fade.show{
-  opacity:1;
-  transform:none;
-}
-</style>
-</head>
+4. Full Menu Section (VERY IMPORTANT)
+   - Properly structured categories:
+     • Classic Gelato (Low Fat)
+     • Premium Gelato
+     • Extra Premium Gelato
+     • Sorbetto (Vegan / Non-Dairy)
+     • Thick Shakes
+     • Gelato Shakes
+     • Coolers
+     • Sundaes
+     • Falooda
+     • Waffle Cones
+     • Extras
+   - Show prices in ₹
+   - Use clean cards or accordion layout
+   - Use relevant Indian dessert images from assets folder
+   - Menu must look premium, readable, and mobile-friendly
 
-<body>
+5. Gallery Section
+   - Use assets images (scoops1, scoops2, scoops3)
+   - Hover zoom + smooth animation
 
-<header>
-  <img src="assets/images/logo.png" alt="Scoop Gelateria">
-  <nav>
-    <a href="#menu">Menu</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+6. Location Section
+   - Embedded Google Map iframe
+   - Address text clearly visible
 
-<section class="hero">
-  <div>
-    <h1>Premium Italian<br>Ice Cream</h1>
-    <p>Handcrafted gelato, vegan sorbetto & indulgent desserts made with love.</p>
-    <button onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
-      Explore Menu
-    </button>
-  </div>
-</section>
+7. Contact / Order Section
+   - Phone number
+   - Timings
+   - Call-to-action text encouraging orders
 
-<section id="menu">
-<h2>Our Menu</h2>
+8. Floating Action Icons (VERY IMPORTANT)
+   - WhatsApp icon (floating)
+   - Call icon (floating)
+   - Zomato icon (floating)
+   - Icons should be circular, elegant, fixed at bottom-right
+   - Zomato link: http://zoma.to/r/21929833
 
-<div class="menu-grid fade">
-  <div class="menu-card">
-    <h3>Classic Gelato</h3>
-    <p>From ₹60 • Low Fat • Alphonso Mango, Cookies & Cream, Mud Chocolate</p>
-  </div>
+9. Footer
+   - Minimal branding
+   - Copyright text
+   - Premium closing line
 
-  <div class="menu-card">
-    <h3>Premium Gelato</h3>
-    <p>From ₹90 • Lotus Biscoff, Swiss Vanilla, Fudge Brownie</p>
-  </div>
+ANIMATIONS:
+- On-scroll reveal animations (CSS + small JS)
+- Button hover micro-interactions
+- Image hover zoom
+- Smooth transitions only (no heavy effects)
 
-  <div class="menu-card">
-    <h3>Extra Premium</h3>
-    <p>From ₹110 • Belgian Chocolate, Hazelnut Praline</p>
-  </div>
+SEO BASICS:
+- Proper <title>
+- Meta description
+- Semantic HTML tags
+- Alt text for all images
 
-  <div class="menu-card">
-    <h3>Sorbetto (Vegan)</h3>
-    <p>Fruit Salsa • Mango & Orange • Tangy Berry</p>
-  </div>
+OUTPUT RULES:
+- Return ONLY the final complete index.html code
+- No explanations
+- No markdown
+- No comments outside code
+- Code must run without errors when pasted into GitHub
 
-  <div class="menu-card">
-    <h3>Thick Shakes</h3>
-    <p>Oreo • Lotus Biscoff • Roasted Almond • ₹160+</p>
-  </div>
-
-  <div class="menu-card">
-    <h3>Sundaes & Falooda</h3>
-    <p>Brownie Blast • Oreo Delight • Shahi Kesar Falooda</p>
-  </div>
-</div>
-</section>
-
-<section id="contact">
-<h2>Order Now</h2>
-<p style="text-align:center">Fresh. Premium. Delivered.</p>
-</section>
-
-<!-- FLOATING ICONS -->
-<div class="floating">
-  <a href="https://wa.me/91XXXXXXXXXX" target="_blank">🟢</a>
-  <a href="tel:+91XXXXXXXXXX">📞</a>
-  <a href="http://zoma.to/r/21929833" target="_blank">🍽️</a>
-</div>
-
-<footer>
-<p>© 2026 Scoop Gelateria • Premium Italian Ice Cream</p>
-</footer>
-
-<script>
-const fades=document.querySelectorAll('.fade');
-window.addEventListener('scroll',()=>{
-  fades.forEach(f=>{
-    if(f.getBoundingClientRect().top<window.innerHeight-100){
-      f.classList.add('show');
-    }
-  });
-});
-</script>
-
-</body>
-</html>
+Make the website look like something a premium café owner would confidently pay for.
