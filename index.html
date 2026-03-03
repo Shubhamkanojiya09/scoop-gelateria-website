@@ -1,181 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Scoop Gelateria | Premium Italian Ice Cream</title>
-  <meta name="description" content="Scoop Gelateria – Premium Italian Ice Cream, Gelato, Sundaes & Thick Shakes in Mulund West, Mumbai."/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scoop Gelateria | Premium Italian Ice Cream</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #fffaf3;
-      color: #2b1b12;
-      scroll-behavior: smooth;
-    }
+<style>
+:root{
+  --cream:#fff6ec;
+  --rose:#e7a6a1;
+  --dark:#2b2b2b;
+  --gold:#c9a24d;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      background: #3b1f0f;
-      padding: 12px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-    }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--cream);
+  color:var(--dark);
+  line-height:1.6;
+}
 
-    header img {
-      height: 45px;
-    }
+/* HEADER */
+header{
+  position:fixed;
+  top:0;width:100%;
+  background:rgba(255,246,236,0.95);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 50px;
+  z-index:1000;
+}
+header img{height:55px;}
+nav a{
+  margin-left:25px;
+  text-decoration:none;
+  color:var(--dark);
+  font-weight:500;
+}
 
-    nav a {
-      color: #fff;
-      margin-left: 25px;
-      text-decoration: none;
-      font-weight: 500;
-    }
+/* HERO */
+.hero{
+  height:100vh;
+  background:
+  linear-gradient(to right, rgba(0,0,0,0.45), rgba(0,0,0,0.1)),
+  url("assets/images/hero1.jpg") center/cover;
+  display:flex;
+  align-items:center;
+  padding-left:60px;
+  color:white;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:4rem;
+}
+.hero p{max-width:500px;margin:20px 0;}
+.hero button{
+  padding:14px 34px;
+  background:var(--rose);
+  border:none;
+  font-size:16px;
+  cursor:pointer;
+  border-radius:30px;
+}
 
-    section {
-      padding: 80px 10%;
-    }
+/* SECTION */
+section{padding:90px 60px;}
+section h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.6rem;
+  margin-bottom:40px;
+  text-align:center;
+}
 
-    .hero {
-      background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
-      url("https://images.unsplash.com/photo-1621447504864-d8686c8f93c5") center/cover;
-      color: white;
-      text-align: center;
-      padding: 140px 10%;
-    }
+/* MENU */
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.menu-card{
+  background:white;
+  border-radius:18px;
+  padding:25px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+  transition:.4s;
+}
+.menu-card:hover{
+  transform:translateY(-8px);
+}
+.menu-card h3{
+  color:var(--rose);
+  margin-bottom:10px;
+}
+.menu-card p{font-size:14px;color:#555;}
 
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 52px;
-    }
+/* FLOATING BUTTONS */
+.floating{
+  position:fixed;
+  right:20px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  bottom:20px;
+}
+.floating a{
+  background:white;
+  width:55px;height:55px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:26px;
+  text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
 
-    .hero p {
-      font-size: 18px;
-      max-width: 600px;
-      margin: 20px auto;
-    }
+/* FOOTER */
+footer{
+  background:#1f1f1f;
+  color:#bbb;
+  padding:40px;
+  text-align:center;
+}
 
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-      padding: 25px;
-      transition: transform .3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-    }
-
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      text-align: center;
-    }
-
-    footer {
-      background: #3b1f0f;
-      color: white;
-      text-align: center;
-      padding: 25px;
-    }
-
-    .float-icons {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      z-index: 999;
-    }
-
-    .float-icons a {
-      background: #3b1f0f;
-      color: white;
-      padding: 14px;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 18px;
-      text-decoration: none;
-    }
-  </style>
+/* ANIMATIONS */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+.fade.show{
+  opacity:1;
+  transform:none;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <img src="logo.png" alt="Scoop Gelateria Logo">
+  <img src="assets/images/logo.png" alt="Scoop Gelateria">
   <nav>
-    <a href="#about">About</a>
     <a href="#menu">Menu</a>
-    <a href="#location">Location</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Premium Italian Ice Cream Experience</h1>
-  <p>Handcrafted gelato, indulgent sundaes and thick shakes made with love in Mulund West.</p>
-</section>
-
-<section id="about">
-  <h2>About Scoop Gelateria</h2>
-  <p style="text-align:center; max-width:700px; margin:auto;">
-    Scoop Gelateria is a premium Italian ice cream destination offering authentic flavours,
-    rich textures and unforgettable desserts crafted from quality ingredients.
-  </p>
-</section>
-
-<section id="menu">
-  <h2>Menu Highlights</h2>
-  <div class="menu-grid">
-    <div class="card"><strong>Gelato Scoops</strong><br>Chocolate, Mango, Strawberry, Vanilla</div>
-    <div class="card"><strong>Sundaes</strong><br>Brownie Sundae, Biscoff Sundae</div>
-    <div class="card"><strong>Thick Shakes</strong><br>Oreo, KitKat, Chocolate</div>
-    <div class="card"><strong>Special Flavours</strong><br>Tadgola, Seasonal Fruits</div>
+  <div>
+    <h1>Premium Italian<br>Ice Cream</h1>
+    <p>Handcrafted gelato, vegan sorbetto & indulgent desserts made with love.</p>
+    <button onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+      Explore Menu
+    </button>
   </div>
 </section>
 
-<section id="location">
-  <h2>Find Us</h2>
-  <iframe
-    src="https://www.google.com/maps?q=Scoop+Gelateria+Mulund+West&output=embed"
-    width="100%" height="350" style="border:0;" loading="lazy"></iframe>
+<section id="menu">
+<h2>Our Menu</h2>
+
+<div class="menu-grid fade">
+  <div class="menu-card">
+    <h3>Classic Gelato</h3>
+    <p>From ₹60 • Low Fat • Alphonso Mango, Cookies & Cream, Mud Chocolate</p>
+  </div>
+
+  <div class="menu-card">
+    <h3>Premium Gelato</h3>
+    <p>From ₹90 • Lotus Biscoff, Swiss Vanilla, Fudge Brownie</p>
+  </div>
+
+  <div class="menu-card">
+    <h3>Extra Premium</h3>
+    <p>From ₹110 • Belgian Chocolate, Hazelnut Praline</p>
+  </div>
+
+  <div class="menu-card">
+    <h3>Sorbetto (Vegan)</h3>
+    <p>Fruit Salsa • Mango & Orange • Tangy Berry</p>
+  </div>
+
+  <div class="menu-card">
+    <h3>Thick Shakes</h3>
+    <p>Oreo • Lotus Biscoff • Roasted Almond • ₹160+</p>
+  </div>
+
+  <div class="menu-card">
+    <h3>Sundaes & Falooda</h3>
+    <p>Brownie Blast • Oreo Delight • Shahi Kesar Falooda</p>
+  </div>
+</div>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <p style="text-align:center;">
-    📞 097690 90200 <br>
-    🕒 Open till 12:30 AM <br>
-    📍 Mulund West, Mumbai
-  </p>
+<h2>Order Now</h2>
+<p style="text-align:center">Fresh. Premium. Delivered.</p>
 </section>
 
+<!-- FLOATING ICONS -->
+<div class="floating">
+  <a href="https://wa.me/91XXXXXXXXXX" target="_blank">🟢</a>
+  <a href="tel:+91XXXXXXXXXX">📞</a>
+  <a href="http://zoma.to/r/21929833" target="_blank">🍽️</a>
+</div>
+
 <footer>
-  © 2026 Scoop Gelateria | Crafted with ❤️
+<p>© 2026 Scoop Gelateria • Premium Italian Ice Cream</p>
 </footer>
 
-<div class="float-icons">
-  <a href="https://wa.me/919769090200">🟢</a>
-  <a href="tel:+919769090200">📞</a>
-  <a href="http://zoma.to/r/21929833">🍨</a>
-</div>
+<script>
+const fades=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+  fades.forEach(f=>{
+    if(f.getBoundingClientRect().top<window.innerHeight-100){
+      f.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
