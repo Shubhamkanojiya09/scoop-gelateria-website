@@ -9,21 +9,20 @@
 
 <style>
 :root{
-  --red:#b23a3a;
-  --offwhite:#faf7f4;
-  --dark:#1c1c1c;
   --pink:#f48fb1;
+  --dark:#1c1c1c;
+  --bg:#fff0f6;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:'Poppins',sans-serif;
-  background:var(--offwhite);
+  background:#fafafa;
   color:var(--dark);
 }
 
-/* NAVBAR */
-.navbar{
+/* NAV */
+header{
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -33,36 +32,23 @@ body{
   top:0;
   z-index:1000;
 }
-.logo{
-  font-size:22px;
-  font-weight:600;
-}
-.logo span{color:var(--red);}
-.navbar nav a{
-  margin:0 14px;
+header h2 span{color:var(--pink);}
+header a{
   text-decoration:none;
+  margin-left:16px;
   color:#333;
   font-weight:500;
 }
-.nav-actions a{
-  margin-left:10px;
-  padding:10px 18px;
-  border-radius:30px;
-  text-decoration:none;
-  font-size:14px;
-}
-.btn-primary{
-  background:var(--red);
-  color:#fff;
-}
-.btn-outline{
-  border:1px solid var(--red);
-  color:var(--red);
+.cta-btn{
+  padding:8px 16px;
+  border-radius:20px;
+  border:1px solid var(--pink);
+  color:var(--pink);
 }
 
 /* HERO */
 .hero{
-  min-height:85vh;
+  min-height:80vh;
   background:
   linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
   url("https://i.ibb.co/JRbcTfmK/image.jpg") center/contain no-repeat;
@@ -71,30 +57,32 @@ body{
   align-items:center;
   color:#fff;
 }
-.hero-content{
+.hero div{
   padding:0 8%;
   max-width:600px;
 }
 .hero h1{
   font-family:'Playfair Display',serif;
-  font-size:50px;
-  margin-bottom:12px;
+  font-size:48px;
 }
-.hero p{
-  font-size:18px;
-  margin-bottom:28px;
+.hero p{margin:14px 0 24px;}
+.hero a{
+  background:var(--pink);
+  color:#fff;
+  padding:12px 26px;
+  border-radius:30px;
+  text-decoration:none;
 }
 
 /* SECTIONS */
-.section{
+section{
   padding:80px 8%;
 }
-.section h2{
+h2{
   font-family:'Playfair Display',serif;
   font-size:38px;
   margin-bottom:20px;
 }
-.section.alt{background:#fff;}
 
 /* ABOUT */
 .about{
@@ -103,8 +91,8 @@ body{
   align-items:center;
 }
 .about img{
-  width:100%;
   max-width:420px;
+  width:100%;
   border-radius:18px;
   object-fit:contain;
 }
@@ -117,27 +105,72 @@ body{
 }
 .highlights img{
   width:100%;
-  border-radius:18px;
+  border-radius:16px;
   object-fit:contain;
   background:#fff;
   padding:10px;
 }
 
+/* ================= MENU ================= */
+.menu-section {
+  background: var(--bg);
+}
+.menu-container {
+  max-width: 1200px;
+  margin: auto;
+}
+.menu-section h2 {
+  text-align: center;
+}
+.menu-subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 50px;
+}
+.menu-category {
+  margin-bottom: 60px;
+}
+.menu-category h3 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: var(--pink);
+  border-left: 4px solid var(--pink);
+  padding-left: 12px;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px 40px;
+}
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  font-size: 14px;
+  transition: 0.3s;
+}
+.menu-item:hover {
+  transform: translateY(-3px);
+  background: #ffe4ec;
+}
+
 /* CONTACT */
+.contact{
+  background:#fff;
+}
 .contact-box{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:40px;
 }
-.contact-details p{
-  margin-bottom:12px;
-  font-size:15px;
-}
 iframe{
   width:100%;
   height:300px;
-  border-radius:18px;
   border:none;
+  border-radius:16px;
 }
 
 /* FOOTER */
@@ -152,43 +185,37 @@ footer{
 @media(max-width:768px){
   .about{flex-direction:column;}
   .contact-box{grid-template-columns:1fr;}
-  .hero h1{font-size:40px;}
 }
 </style>
 </head>
 
 <body>
 
-<header class="navbar">
-  <div class="logo"><span>Scoop</span> Gelateria</div>
-  <nav>
-    <a href="#about">About</a>
+<header>
+  <h2><span>Scoop</span> Gelateria</h2>
+  <div>
     <a href="#menu">Menu</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <div class="nav-actions">
-    <a href="https://wa.me/91XXXXXXXXXX" class="btn-outline">WhatsApp</a>
-    <a href="tel:+91XXXXXXXXXX" class="btn-primary">Call</a>
+    <a href="#contact" class="cta-btn">Contact</a>
   </div>
 </header>
 
 <section class="hero">
-  <div class="hero-content">
+  <div>
     <h1>Scoop of Happiness</h1>
-    <p>Premium Italian Ice Cream made for families, friends and joyful moments.</p>
-    <a href="#menu" class="btn-primary">View Menu</a>
+    <p>Premium Italian Ice Cream for families, friends and joyful moments.</p>
+    <a href="#menu">View Menu</a>
   </div>
 </section>
 
-<section class="section about" id="about">
+<section class="about">
   <div>
     <h2>Our Story</h2>
-    <p>Scoop Gelateria brings authentic Italian-style gelato crafted with premium ingredients and served with love. Every scoop is designed to make you smile.</p>
+    <p>Scoop Gelateria brings authentic Italian-style gelato crafted with premium ingredients and served with love.</p>
   </div>
   <img src="https://i.ibb.co/gFMw0F0Q/image.jpg">
 </section>
 
-<section class="section alt">
+<section>
   <h2>Highlights</h2>
   <div class="highlights">
     <img src="https://i.ibb.co/RGmjzB9v/image.jpg">
@@ -198,36 +225,41 @@ footer{
   </div>
 </section>
 
-<!-- ================= MENU SECTION ================= -->
 <section class="menu-section" id="menu">
   <div class="menu-container">
     <h2>Our Menu</h2>
     <p class="menu-subtitle">Crafted fresh. Served with love.</p>
 
-    <!-- YOUR FULL MENU CODE (UNCHANGED) -->
-    <!-- pasted exactly as you gave -->
-    <!-- (menu code remains same, no logic changed) -->
-
-    <!-- PASTE CONTINUES -->
-
+    <div class="menu-category">
+      <h3>Classic Gelato</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><span>Naked Vanilla</span><span>₹60 / ₹150 / ₹300</span></div>
+        <div class="menu-item"><span>Cookies & Cream</span><span>₹60 / ₹150 / ₹300</span></div>
+        <div class="menu-item"><span>American Berry</span><span>₹60 / ₹150 / ₹300</span></div>
+        <div class="menu-item"><span>Malai Indulge</span><span>₹60 / ₹150 / ₹300</span></div>
       </div>
+    </div>
+
+    <div class="menu-category">
+      <h3>Premium Gelato</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><span>Lotus Biscoff Cream</span><span>₹90 / ₹220 / ₹400</span></div>
+        <div class="menu-item"><span>Belgian Chocolate</span><span>₹110 / ₹270 / ₹500</span></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section alt" id="contact">
+<section class="contact" id="contact">
   <h2>Visit Us</h2>
   <div class="contact-box">
-    <div class="contact-details">
-      <p><strong>📍 Address:</strong><br>
-      Scoop Gelateria, Mulund West, Mumbai, Maharashtra</p>
-
+    <div>
+      <p><strong>📍 Address:</strong><br>Scoop Gelateria, Mulund West, Mumbai</p>
       <p><strong>📞 Phone:</strong> +91 XXXXXXXXXX</p>
       <p><strong>💬 WhatsApp:</strong> +91 XXXXXXXXXX</p>
       <p><strong>⏰ Timings:</strong> 12 PM – 11 PM</p>
     </div>
-
-    <iframe 
-      src="https://www.google.com/maps?q=Mulund%20West%20Mumbai&output=embed">
-    </iframe>
+    <iframe src="https://www.google.com/maps?q=Mulund%20West%20Mumbai&output=embed"></iframe>
   </div>
 </section>
 
