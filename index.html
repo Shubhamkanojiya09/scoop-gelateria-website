@@ -5,17 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scoop Gelateria | Scoop of Happiness</title>
 
-<!-- Fonts -->
+<!-- GOOGLE FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-<!-- Icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
 :root{
   --brand-red:#b23a3a;
-  --brand-light:#faf7f4;
-  --text-dark:#1c1c1c;
+  --brand-light:#fff7f2;
+  --brand-soft:#fde8e1;
+  --text:#2b2b2b;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -23,87 +21,84 @@
 body{
   font-family:'Poppins',sans-serif;
   background:var(--brand-light);
-  color:var(--text-dark);
+  color:var(--text);
+  line-height:1.6;
 }
 
-/* ===== HEADER ===== */
+/* ================= NAVBAR ================= */
 header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:#fff;
+  background:#ffffff;
+  padding:16px 8%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:16px 8%;
-  box-shadow:0 4px 20px rgba(0,0,0,0.05);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
 }
 
-header h2 span{color:var(--brand-red);}
+.logo{
+  font-size:22px;
+  font-weight:600;
+}
+.logo span{color:var(--brand-red);}
 
-header nav a{
-  margin:0 14px;
+nav a{
+  margin-left:18px;
   text-decoration:none;
   color:#333;
   font-weight:500;
 }
 
-.header-actions a{
-  margin-left:10px;
-  padding:10px 18px;
-  border-radius:30px;
+.action-btn{
+  margin-left:12px;
+  padding:8px 16px;
+  border-radius:25px;
+  border:1px solid var(--brand-red);
+  color:var(--brand-red);
   text-decoration:none;
   font-size:14px;
-  transition:.3s;
 }
 
-.whatsapp{background:#25d366;color:#fff;}
-.call{background:var(--brand-red);color:#fff;}
-
-.header-actions a:hover{transform:translateY(-2px);}
-
-/* ===== HERO ===== */
+/* ================= HERO ================= */
 .hero{
   min-height:85vh;
   display:flex;
   align-items:center;
   padding:0 8%;
-  background:#000;
-  color:#fff;
-}
-
-.hero img{
-  max-width:420px;
-  width:100%;
-  height:auto;
-  border-radius:20px;
-  margin-left:auto;
+  background:
+    linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.75)),
+    url("https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1600&q=80")
+    center/cover no-repeat;
 }
 
 .hero-content{
-  max-width:520px;
+  max-width:600px;
+  animation:fadeUp 1s ease;
 }
 
 .hero h1{
   font-family:'Playfair Display',serif;
   font-size:52px;
+  color:var(--brand-red);
 }
 
 .hero p{
-  margin:16px 0 30px;
+  margin:16px 0 28px;
   font-size:18px;
 }
 
-.hero a{
+.hero .primary{
   background:var(--brand-red);
-  color:#fff;
+  color:white;
   padding:14px 30px;
   border-radius:30px;
   text-decoration:none;
   display:inline-block;
 }
 
-/* ===== SECTION BASE ===== */
+/* ================= SECTIONS ================= */
 section{
   padding:90px 8%;
 }
@@ -114,88 +109,102 @@ h2{
   margin-bottom:20px;
 }
 
-/* ===== ABOUT ===== */
+/* ================= ABOUT ================= */
 .about{
-  display:flex;
+  display:grid;
+  grid-template-columns:1fr 1fr;
   gap:40px;
   align-items:center;
 }
 
 .about img{
-  max-width:420px;
   width:100%;
-  height:auto;
-  border-radius:20px;
+  max-width:420px;
+  border-radius:18px;
+  object-fit:contain;
+  background:white;
+  padding:10px;
 }
 
-/* ===== HIGHLIGHTS ===== */
+/* ================= HIGHLIGHTS ================= */
 .highlights{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:24px;
+  gap:22px;
 }
 
 .highlights img{
   width:100%;
-  height:auto;
   border-radius:18px;
-  background:#fff;
+  object-fit:contain;
+  background:white;
   padding:12px;
-  transition:.3s;
+  transition:transform .3s;
 }
 
-.highlights img:hover{transform:scale(1.03);}
-
-/* ================= MENU SECTION ================= */
-.menu-section{
-  background:#fff0f6;
+.highlights img:hover{
+  transform:translateY(-6px);
 }
 
-.menu-container{
-  max-width:1200px;
-  margin:auto;
+/* ================= MENU (YOUR CODE) ================= */
+.menu-section {
+  padding: 100px 8%;
+  background: var(--brand-soft);
 }
 
-.menu-subtitle{
-  text-align:center;
-  color:#777;
-  margin-bottom:60px;
+.menu-container {
+  max-width: 1200px;
+  margin: auto;
 }
 
-.menu-category{
-  margin-bottom:60px;
+.menu-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.menu-category h3{
-  font-size:24px;
-  margin-bottom:25px;
-  color:var(--brand-red);
-  border-left:4px solid var(--brand-red);
-  padding-left:12px;
+.menu-subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 60px;
 }
 
-.menu-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:18px 40px;
+.menu-category {
+  margin-bottom: 60px;
 }
 
-.menu-item{
-  display:flex;
-  justify-content:space-between;
-  background:#fff;
-  padding:14px 18px;
-  border-radius:14px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.06);
-  transition:.3s;
+.menu-category h3 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: var(--brand-red);
+  border-left: 4px solid var(--brand-red);
+  padding-left: 12px;
 }
 
-.menu-item:hover{
-  transform:translateY(-4px);
-  background:#ffe4ec;
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px 40px;
 }
 
-/* ===== CONTACT ===== */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.menu-item:hover {
+  transform: translateY(-3px);
+  background: #ffe4ec;
+}
+
+/* ================= CONTACT ================= */
 .contact-box{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -203,30 +212,36 @@ h2{
 }
 
 .contact-box p{
-  margin-bottom:12px;
+  margin-bottom:14px;
+  font-size:15px;
 }
 
 iframe{
   width:100%;
   height:320px;
   border:none;
-  border-radius:20px;
+  border-radius:18px;
 }
 
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 footer{
-  background:#111;
-  color:#ccc;
+  background:#fff;
   text-align:center;
   padding:30px;
+  border-top:1px solid #eee;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ================= RESPONSIVE ================= */
 @media(max-width:768px){
-  .hero{flex-direction:column;text-align:center;}
-  .hero img{margin:40px 0 0;}
-  .about{flex-direction:column;}
+  .about{grid-template-columns:1fr;}
   .contact-box{grid-template-columns:1fr;}
+  .hero h1{font-size:42px;}
 }
 </style>
 </head>
@@ -234,39 +249,32 @@ footer{
 <body>
 
 <header>
-  <h2><span>Scoop</span> Gelateria</h2>
+  <div class="logo"><span>Scoop</span> Gelateria</div>
   <nav>
     <a href="#menu">Menu</a>
-    <a href="#contact">Contact</a>
+    <a href="#contact" class="action-btn">📞 Call</a>
+    <a href="https://wa.me/919769090200" class="action-btn">💬 WhatsApp</a>
   </nav>
-  <div class="header-actions">
-    <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX"><i class="fa-brands fa-whatsapp"></i></a>
-    <a class="call" href="tel:+91XXXXXXXXXX"><i class="fa-solid fa-phone"></i></a>
-  </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h1>Scoop of Happiness</h1>
-    <p>Premium Italian Ice Cream crafted fresh for joyful moments.</p>
-    <a href="#menu"><i class="fa-solid fa-cart-shopping"></i> Order Now</a>
+    <p>Premium Italian ice creams crafted fresh, served with love, and enjoyed with family.</p>
+    <a href="#menu" class="primary">🍨 View Menu</a>
   </div>
-  <img src="https://i.ibb.co/JRbcTfmK/image.jpg">
 </section>
 
-<!-- ABOUT -->
 <section class="about">
   <div>
     <h2>Our Story</h2>
-    <p>Scoop Gelateria blends Italian gelato traditions with local flavours, delivering rich taste and happiness in every scoop.</p>
+    <p>Scoop Gelateria brings authentic Italian-style gelato with premium ingredients and joyful flavours — a perfect place for families and friends.</p>
   </div>
-  <img src="https://i.ibb.co/gFMw0F0Q/image.jpg">
+  <img src="https://i.ibb.co/gFMw0F0Q/image.jpg" alt="">
 </section>
 
-<!-- HIGHLIGHTS -->
 <section>
-  <h2>Our Creations</h2>
+  <h2>Menu Highlights</h2>
   <div class="highlights">
     <img src="https://i.ibb.co/RGmjzB9v/image.jpg">
     <img src="https://i.ibb.co/bRGJHv3K/image.jpg">
@@ -275,13 +283,13 @@ footer{
   </div>
 </section>
 
-<!-- MENU -->
+<!-- MENU SECTION (FULL) -->
 <section class="menu-section" id="menu">
   <div class="menu-container">
     <h2>Our Menu</h2>
     <p class="menu-subtitle">Crafted fresh. Served with love.</p>
 
-    <!-- FULL MENU (YOUR STRUCTURE) -->
+    <!-- CLASSIC GELATO -->
     <div class="menu-category">
       <h3>Classic Gelato</h3>
       <div class="menu-grid">
@@ -292,6 +300,7 @@ footer{
       </div>
     </div>
 
+    <!-- PREMIUM -->
     <div class="menu-category">
       <h3>Premium & Extra Premium Gelato</h3>
       <div class="menu-grid">
@@ -302,6 +311,7 @@ footer{
       </div>
     </div>
 
+    <!-- SORBET -->
     <div class="menu-category">
       <h3>Sorbettos (Vegan)</h3>
       <div class="menu-grid">
@@ -311,6 +321,7 @@ footer{
       </div>
     </div>
 
+    <!-- SHAKES -->
     <div class="menu-category">
       <h3>Shakes & Coolers</h3>
       <div class="menu-grid">
@@ -320,6 +331,7 @@ footer{
       </div>
     </div>
 
+    <!-- DESSERTS -->
     <div class="menu-category">
       <h3>Desserts & Specials</h3>
       <div class="menu-grid">
@@ -333,17 +345,19 @@ footer{
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <h2>Visit Us</h2>
   <div class="contact-box">
     <div>
-      <p><strong>📍 Address:</strong><br>Scoop Gelateria, Mulund West, Mumbai, Maharashtra</p>
-      <p><strong>📞 Phone:</strong> +91 XXXXXXXXXX</p>
-      <p><strong>💬 WhatsApp:</strong> +91 XXXXXXXXXX</p>
-      <p><strong>⏰ Timings:</strong> 12 PM – 11 PM</p>
+      <p><strong>📍 Address:</strong><br>
+      Shop 2, Ground Floor, Mooreshwar Tower, Ward T, MG Road,<br>
+      Mulund West, Mumbai</p>
+
+      <p><strong>📞 Call:</strong> 9769090200</p>
+      <p><strong>💬 WhatsApp:</strong> 9769090200</p>
     </div>
-    <iframe src="https://www.google.com/maps?q=Mulund%20West%20Mumbai&output=embed"></iframe>
+
+    <iframe src="https://www.google.com/maps?q=Mooreshwar%20Tower%20Mulund%20West&output=embed"></iframe>
   </div>
 </section>
 
