@@ -8,26 +8,28 @@
 <!-- GOOGLE FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
 <style>
 :root{
-  --brand-red:#b23a3a;
-  --brand-light:#fff7f2;
-  --brand-soft:#fde8e1;
-  --text:#2b2b2b;
+  --primary:#f48fb1;
+  --secondary:#fff0f6;
+  --text:#333;
+  --white:#ffffff;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
-
 body{
   font-family:'Poppins',sans-serif;
-  background:var(--brand-light);
+  background:#fafafa;
   color:var(--text);
   line-height:1.6;
 }
 
 /* ================= NAVBAR ================= */
 header{
-  background:#ffffff;
+  background:var(--white);
   padding:16px 8%;
   display:flex;
   justify-content:space-between;
@@ -35,30 +37,18 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+  box-shadow:0 4px 20px rgba(0,0,0,0.05);
 }
-
 .logo{
   font-size:22px;
   font-weight:600;
 }
-.logo span{color:var(--brand-red);}
-
+.logo span{color:var(--primary);}
 nav a{
-  margin-left:18px;
+  margin-left:20px;
   text-decoration:none;
-  color:#333;
+  color:#555;
   font-weight:500;
-}
-
-.action-btn{
-  margin-left:12px;
-  padding:8px 16px;
-  border-radius:25px;
-  border:1px solid var(--brand-red);
-  color:var(--brand-red);
-  text-decoration:none;
-  font-size:14px;
 }
 
 /* ================= HERO ================= */
@@ -66,142 +56,96 @@ nav a{
   min-height:85vh;
   display:flex;
   align-items:center;
-  padding:0 8%;
-  background:
-    linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.75)),
-    url("https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1600&q=80")
-    center/cover no-repeat;
+  background:linear-gradient(
+    rgba(255,255,255,0.85),
+    rgba(255,255,255,0.85)
+  ),
+  url("https://i.ibb.co/LD4CkpXr") center/cover no-repeat;
 }
-
 .hero-content{
+  padding:0 8%;
   max-width:600px;
   animation:fadeUp 1s ease;
 }
-
 .hero h1{
   font-family:'Playfair Display',serif;
-  font-size:52px;
-  color:var(--brand-red);
+  font-size:50px;
 }
-
-.hero p{
-  margin:16px 0 28px;
-  font-size:18px;
-}
-
-.hero .primary{
-  background:var(--brand-red);
-  color:white;
-  padding:14px 30px;
+.hero p{margin:18px 0 28px;}
+.hero-buttons a{
+  display:inline-block;
+  margin-right:12px;
+  padding:12px 26px;
   border-radius:30px;
   text-decoration:none;
-  display:inline-block;
+  background:var(--primary);
+  color:#fff;
 }
 
 /* ================= SECTIONS ================= */
 section{
   padding:90px 8%;
 }
-
 h2{
   font-family:'Playfair Display',serif;
-  font-size:40px;
+  font-size:38px;
   margin-bottom:20px;
-}
-
-/* ================= ABOUT ================= */
-.about{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:center;
-}
-
-.about img{
-  width:100%;
-  max-width:420px;
-  border-radius:18px;
-  object-fit:contain;
-  background:white;
-  padding:10px;
 }
 
 /* ================= HIGHLIGHTS ================= */
 .highlights{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:22px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
 }
-
 .highlights img{
   width:100%;
-  border-radius:18px;
-  object-fit:contain;
-  background:white;
-  padding:12px;
-  transition:transform .3s;
+  height:280px;
+  object-fit:cover;
+  border-radius:20px;
+  transition:0.4s;
 }
+.highlights img:hover{transform:scale(1.03);}
 
-.highlights img:hover{
-  transform:translateY(-6px);
+/* ================= MENU ================= */
+.menu-section{
+  background:var(--secondary);
 }
-
-/* ================= MENU (YOUR CODE) ================= */
-.menu-section {
-  padding: 100px 8%;
-  background: var(--brand-soft);
+.menu-container{
+  max-width:1200px;
+  margin:auto;
 }
-
-.menu-container {
-  max-width: 1200px;
-  margin: auto;
+.menu-subtitle{
+  text-align:center;
+  color:#777;
+  margin-bottom:60px;
 }
-
-.menu-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 42px;
-  text-align: center;
-  margin-bottom: 10px;
+.menu-category{
+  margin-bottom:60px;
 }
-
-.menu-subtitle {
-  text-align: center;
-  color: #777;
-  margin-bottom: 60px;
+.menu-category h3{
+  color:var(--primary);
+  border-left:4px solid var(--primary);
+  padding-left:12px;
+  margin-bottom:25px;
 }
-
-.menu-category {
-  margin-bottom: 60px;
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:16px 40px;
 }
-
-.menu-category h3 {
-  font-size: 24px;
-  margin-bottom: 25px;
-  color: var(--brand-red);
-  border-left: 4px solid var(--brand-red);
-  padding-left: 12px;
+.menu-item{
+  background:#fff;
+  padding:12px 18px;
+  border-radius:14px;
+  display:flex;
+  justify-content:space-between;
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
+  transition:.3s;
 }
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px 40px;
-}
-
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  background: white;
-  padding: 12px 18px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-.menu-item:hover {
-  transform: translateY(-3px);
-  background: #ffe4ec;
+.menu-item:hover{
+  transform:translateY(-4px);
+  background:#ffe4ec;
 }
 
 /* ================= CONTACT ================= */
@@ -210,38 +154,47 @@ h2{
   grid-template-columns:1fr 1fr;
   gap:40px;
 }
-
-.contact-box p{
-  margin-bottom:14px;
-  font-size:15px;
+.contact-box i{
+  color:var(--primary);
+  margin-right:8px;
 }
-
 iframe{
   width:100%;
   height:320px;
   border:none;
-  border-radius:18px;
+  border-radius:20px;
 }
+
+/* ================= FLOATING BUTTONS ================= */
+.float-btn{
+  position:fixed;
+  right:20px;
+  padding:14px;
+  border-radius:50%;
+  color:#fff;
+  font-size:20px;
+  z-index:2000;
+}
+.call{bottom:90px;background:#4caf50;}
+.whatsapp{bottom:20px;background:#25d366;}
 
 /* ================= FOOTER ================= */
 footer{
-  background:#fff;
   text-align:center;
   padding:30px;
+  background:#fff;
   border-top:1px solid #eee;
 }
 
-/* ================= ANIMATIONS ================= */
+/* ================= ANIMATION ================= */
 @keyframes fadeUp{
-  from{opacity:0;transform:translateY(20px);}
+  from{opacity:0;transform:translateY(30px);}
   to{opacity:1;transform:translateY(0);}
 }
 
-/* ================= RESPONSIVE ================= */
 @media(max-width:768px){
-  .about{grid-template-columns:1fr;}
   .contact-box{grid-template-columns:1fr;}
-  .hero h1{font-size:42px;}
+  .hero h1{font-size:40px;}
 }
 </style>
 </head>
@@ -252,44 +205,37 @@ footer{
   <div class="logo"><span>Scoop</span> Gelateria</div>
   <nav>
     <a href="#menu">Menu</a>
-    <a href="#contact" class="action-btn">📞 Call</a>
-    <a href="https://wa.me/919769090200" class="action-btn">💬 WhatsApp</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
   <div class="hero-content">
     <h1>Scoop of Happiness</h1>
-    <p>Premium Italian ice creams crafted fresh, served with love, and enjoyed with family.</p>
-    <a href="#menu" class="primary">🍨 View Menu</a>
+    <p>Premium Italian Ice Cream crafted for joyful moments.</p>
+    <div class="hero-buttons">
+      <a href="#menu">View Menu</a>
+      <a href="https://wa.me/919769090200">Order Now</a>
+    </div>
   </div>
-</section>
-
-<section class="about">
-  <div>
-    <h2>Our Story</h2>
-    <p>Scoop Gelateria brings authentic Italian-style gelato with premium ingredients and joyful flavours — a perfect place for families and friends.</p>
-  </div>
-  <img src="https://i.ibb.co/gFMw0F0Q/image.jpg" alt="">
 </section>
 
 <section>
-  <h2>Menu Highlights</h2>
+  <h2>Our Highlights</h2>
   <div class="highlights">
-    <img src="https://i.ibb.co/RGmjzB9v/image.jpg">
-    <img src="https://i.ibb.co/bRGJHv3K/image.jpg">
-    <img src="https://i.ibb.co/JRbcTfmK/image.jpg">
-    <img src="https://i.ibb.co/gFMw0F0Q/image.jpg">
+    <img src="https://i.ibb.co/Sw1736WB">
+    <img src="https://i.ibb.co/TxjLSFf9">
+    <img src="https://i.ibb.co/KpZDsbqz">
+    <img src="https://i.ibb.co/Z6wmZphs">
   </div>
 </section>
 
-<!-- MENU SECTION (FULL) -->
+<!-- ================= MENU (FULL – YOUR CODE) ================= -->
 <section class="menu-section" id="menu">
   <div class="menu-container">
     <h2>Our Menu</h2>
     <p class="menu-subtitle">Crafted fresh. Served with love.</p>
 
-    <!-- CLASSIC GELATO -->
     <div class="menu-category">
       <h3>Classic Gelato</h3>
       <div class="menu-grid">
@@ -300,7 +246,6 @@ footer{
       </div>
     </div>
 
-    <!-- PREMIUM -->
     <div class="menu-category">
       <h3>Premium & Extra Premium Gelato</h3>
       <div class="menu-grid">
@@ -311,7 +256,6 @@ footer{
       </div>
     </div>
 
-    <!-- SORBET -->
     <div class="menu-category">
       <h3>Sorbettos (Vegan)</h3>
       <div class="menu-grid">
@@ -321,24 +265,22 @@ footer{
       </div>
     </div>
 
-    <!-- SHAKES -->
     <div class="menu-category">
       <h3>Shakes & Coolers</h3>
       <div class="menu-grid">
-        <div class="menu-item"><span>Classic Gelato Shake</span><span>₹120 – ₹200</span></div>
-        <div class="menu-item"><span>Premium Shake</span><span>₹140 – ₹220</span></div>
-        <div class="menu-item"><span>Fruit Cooler</span><span>₹160 – ₹240</span></div>
+        <div class="menu-item"><span>Classic Gelato Shake</span><span>₹120 - ₹200</span></div>
+        <div class="menu-item"><span>Premium Shake</span><span>₹140 - ₹220</span></div>
+        <div class="menu-item"><span>Fruit Cooler</span><span>₹160 - ₹240</span></div>
       </div>
     </div>
 
-    <!-- DESSERTS -->
     <div class="menu-category">
       <h3>Desserts & Specials</h3>
       <div class="menu-grid">
         <div class="menu-item"><span>Brownie Sundae</span><span>₹170</span></div>
         <div class="menu-item"><span>Chocolate Romance</span><span>₹170</span></div>
         <div class="menu-item"><span>Nutty Ride</span><span>₹170</span></div>
-        <div class="menu-item"><span>Hot Chocolate</span><span>₹80 – ₹150</span></div>
+        <div class="menu-item"><span>Hot Chocolate</span><span>₹80 - ₹150</span></div>
       </div>
     </div>
 
@@ -349,21 +291,22 @@ footer{
   <h2>Visit Us</h2>
   <div class="contact-box">
     <div>
-      <p><strong>📍 Address:</strong><br>
-      Shop 2, Ground Floor, Mooreshwar Tower, Ward T, MG Road,<br>
-      Mulund West, Mumbai</p>
+      <p><i class="fa-solid fa-location-dot"></i>
+      Shop 2, Ground Floor, Mooreshwar Tower, Ward T, MG Road, Mulund West, Mumbai</p>
 
-      <p><strong>📞 Call:</strong> 9769090200</p>
-      <p><strong>💬 WhatsApp:</strong> 9769090200</p>
+      <p><i class="fa-solid fa-phone"></i> 9769090200</p>
+      <p><i class="fa-brands fa-whatsapp"></i> 9769090200</p>
     </div>
 
     <iframe src="https://www.google.com/maps?q=Mooreshwar%20Tower%20Mulund%20West&output=embed"></iframe>
   </div>
 </section>
 
+<a class="float-btn call" href="tel:9769090200"><i class="fa-solid fa-phone"></i></a>
+<a class="float-btn whatsapp" href="https://wa.me/919769090200"><i class="fa-brands fa-whatsapp"></i></a>
+
 <footer>
-  <p><strong>Scoop Gelateria</strong></p>
-  <p>Scoop of Happiness</p>
+  <p><strong>Scoop Gelateria</strong> · Scoop of Happiness</p>
 </footer>
 
 </body>
