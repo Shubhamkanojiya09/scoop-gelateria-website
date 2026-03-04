@@ -6,12 +6,12 @@
 <title>Scoop Gelateria | Scoop of Happiness</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
-  --primary:#e5739a;
-  --secondary:#fff3f7;
+  --primary:#d96c86;
+  --secondary:#fff1f5;
   --text:#333;
   --white:#ffffff;
 }
@@ -19,10 +19,12 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:'Poppins',sans-serif;
-  background:#fafafa;
   color:var(--text);
+  background:#fafafa;
+  scroll-behavior:smooth;
 }
 
+/* HEADER */
 header{
   background:#fff;
   padding:16px 8%;
@@ -32,12 +34,15 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  box-shadow:0 4px 20px rgba(0,0,0,0.06);
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
 }
-.logo{font-size:22px;font-weight:600;}
+.logo{
+  font-size:22px;
+  font-weight:600;
+}
 .logo span{color:var(--primary);}
 nav a{
-  margin-left:22px;
+  margin-left:24px;
   text-decoration:none;
   color:#555;
   font-weight:500;
@@ -45,7 +50,7 @@ nav a{
 
 /* HERO */
 .hero{
-  height:85vh;
+  height:90vh;
   position:relative;
   overflow:hidden;
 }
@@ -55,16 +60,13 @@ nav a{
   inset:0;
   background-size:cover;
   background-position:center;
-  animation:slide 18s infinite;
+  animation:heroSlide 18s infinite;
 }
-.hero-overlay{
+.hero::after{
+  content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    to right,
-    rgba(255,255,255,0.55),
-    rgba(255,255,255,0.35)
-  );
+  background:rgba(255,255,255,0.38);
 }
 .hero-content{
   position:relative;
@@ -77,36 +79,40 @@ nav a{
 }
 .hero h1{
   font-family:'Playfair Display',serif;
-  font-size:54px;
+  font-size:56px;
 }
 .hero p{
-  margin:18px 0 28px;
+  margin:20px 0 30px;
   max-width:520px;
 }
 .hero-buttons a{
   display:inline-block;
   margin-right:12px;
-  padding:12px 26px;
+  padding:13px 28px;
   border-radius:30px;
   text-decoration:none;
   background:var(--primary);
   color:#fff;
+  transition:.3s;
 }
+.hero-buttons a:hover{transform:translateY(-3px);}
 
-@keyframes slide{
+@keyframes heroSlide{
   0%{background-image:url("https://images.pexels.com/photos/5061198/pexels-photo-5061198.jpeg");}
   33%{background-image:url("https://images.pexels.com/photos/22809622/pexels-photo-22809622.jpeg");}
   66%{background-image:url("https://images.pexels.com/photos/20683666/pexels-photo-20683666.jpeg");}
   100%{background-image:url("https://images.pexels.com/photos/5061198/pexels-photo-5061198.jpeg");}
 }
 
+/* SECTIONS */
 section{padding:90px 8%;}
 h2{
   font-family:'Playfair Display',serif;
-  font-size:38px;
-  margin-bottom:20px;
+  font-size:40px;
+  margin-bottom:18px;
 }
 
+/* SHOWCASE */
 .showcase{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -116,32 +122,45 @@ h2{
   width:100%;
   height:300px;
   object-fit:cover;
-  border-radius:20px;
+  border-radius:22px;
   transition:.4s;
 }
 .showcase img:hover{transform:translateY(-6px);}
 
-.menu-section{background:var(--secondary);}
-.menu-container{max-width:1200px;margin:auto;}
-.menu-subtitle{text-align:center;color:#777;margin-bottom:60px;}
-.menu-category{margin-bottom:60px;}
+/* MENU */
+.menu-section{
+  background:var(--secondary);
+}
+.menu-container{
+  max-width:1200px;
+  margin:auto;
+}
+.menu-subtitle{
+  text-align:center;
+  color:#777;
+  margin-bottom:60px;
+}
+.menu-category{
+  margin-bottom:60px;
+}
 .menu-category h3{
+  font-size:24px;
+  margin-bottom:25px;
   color:var(--primary);
   border-left:4px solid var(--primary);
   padding-left:12px;
-  margin-bottom:25px;
 }
 .menu-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:16px 40px;
+  gap:15px 40px;
 }
 .menu-item{
+  display:flex;
+  justify-content:space-between;
   background:#fff;
   padding:12px 18px;
   border-radius:14px;
-  display:flex;
-  justify-content:space-between;
   box-shadow:0 6px 18px rgba(0,0,0,0.06);
   transition:.3s;
 }
@@ -150,12 +169,16 @@ h2{
   background:#ffe4ec;
 }
 
+/* CONTACT */
 .contact-box{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:40px;
 }
-.contact-box i{color:var(--primary);margin-right:8px;}
+.contact-box i{
+  color:var(--primary);
+  margin-right:8px;
+}
 iframe{
   width:100%;
   height:320px;
@@ -163,6 +186,7 @@ iframe{
   border-radius:20px;
 }
 
+/* FLOAT BUTTONS */
 .float-btn{
   position:fixed;
   right:20px;
@@ -189,7 +213,7 @@ footer{
 
 @media(max-width:768px){
   .contact-box{grid-template-columns:1fr;}
-  .hero h1{font-size:42px;}
+  .hero h1{font-size:44px;}
 }
 </style>
 </head>
@@ -205,7 +229,6 @@ footer{
 </header>
 
 <section class="hero">
-  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div>
       <h1>Scoop of Happiness</h1>
@@ -227,13 +250,59 @@ footer{
   </div>
 </section>
 
+<!-- ================= MENU SECTION ================= -->
 <section class="menu-section" id="menu">
   <div class="menu-container">
-    <h2>Our Menu</h2>
+    <h2 style="text-align:center;">Our Menu</h2>
     <p class="menu-subtitle">Crafted fresh. Served with love.</p>
 
-    <!-- MENU KEPT SAME AS BEFORE -->
-    <!-- (No change here as requested) -->
+    <div class="menu-category">
+      <h3>Classic Gelato</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><span>Naked Vanilla</span><span>₹60 / ₹150 / ₹300</span></div>
+        <div class="menu-item"><span>Cookies & Cream</span><span>₹60 / ₹150 / ₹300</span></div>
+        <div class="menu-item"><span>American Berry</span><span>₹60 / ₹150 / ₹300</span></div>
+        <div class="menu-item"><span>Malai Indulge</span><span>₹60 / ₹150 / ₹300</span></div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h3>Premium & Extra Premium Gelato</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><span>Lotus Biscoff Cream</span><span>₹90 / ₹220 / ₹400</span></div>
+        <div class="menu-item"><span>Swiss Vanilla Roasted Almond</span><span>₹90 / ₹220 / ₹400</span></div>
+        <div class="menu-item"><span>Belgian Chocolate</span><span>₹110 / ₹270 / ₹500</span></div>
+        <div class="menu-item"><span>Hazelnut Praline</span><span>₹110 / ₹270 / ₹500</span></div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h3>Sorbettos (Vegan)</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><span>Mango Tango</span><span>₹110 / ₹270 / ₹500</span></div>
+        <div class="menu-item"><span>Fruit Salsa</span><span>₹110 / ₹270 / ₹500</span></div>
+        <div class="menu-item"><span>Tangy Berry</span><span>₹110 / ₹270 / ₹500</span></div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h3>Shakes & Coolers</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><span>Classic Gelato Shake</span><span>₹120 - ₹200</span></div>
+        <div class="menu-item"><span>Premium Shake</span><span>₹140 - ₹220</span></div>
+        <div class="menu-item"><span>Fruit Cooler</span><span>₹160 - ₹240</span></div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h3>Desserts & Specials</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><span>Brownie Sundae</span><span>₹170</span></div>
+        <div class="menu-item"><span>Chocolate Romance</span><span>₹170</span></div>
+        <div class="menu-item"><span>Nutty Ride</span><span>₹170</span></div>
+        <div class="menu-item"><span>Hot Chocolate</span><span>₹80 - ₹150</span></div>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -260,5 +329,6 @@ footer{
 
 </body>
 </html>
+
 
  
