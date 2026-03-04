@@ -5,23 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scoop Gelateria | Scoop of Happiness</title>
 
+<!-- Fonts & Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
 :root{
-  --primary:#d96c86;
-  --secondary:#fff1f5;
+  --primary:#e5739a;
+  --soft:#fff3f7;
   --text:#333;
-  --white:#ffffff;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:'Poppins',sans-serif;
-  color:var(--text);
   background:#fafafa;
-  scroll-behavior:smooth;
+  color:var(--text);
 }
 
 /* HEADER */
@@ -34,15 +33,12 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  box-shadow:0 6px 20px rgba(0,0,0,0.06);
+  box-shadow:0 4px 18px rgba(0,0,0,.08);
 }
-.logo{
-  font-size:22px;
-  font-weight:600;
-}
-.logo span{color:var(--primary);}
+.logo{font-size:22px;font-weight:600}
+.logo span{color:var(--primary)}
 nav a{
-  margin-left:24px;
+  margin-left:22px;
   text-decoration:none;
   color:#555;
   font-weight:500;
@@ -50,7 +46,7 @@ nav a{
 
 /* HERO */
 .hero{
-  height:90vh;
+  height:85vh;
   position:relative;
   overflow:hidden;
 }
@@ -60,13 +56,16 @@ nav a{
   inset:0;
   background-size:cover;
   background-position:center;
-  animation:heroSlide 18s infinite;
+  animation:slide 18s infinite;
 }
-.hero::after{
-  content:"";
+.hero-overlay{
   position:absolute;
   inset:0;
-  background:rgba(255,255,255,0.38);
+  background:linear-gradient(
+    to right,
+    rgba(255,255,255,.55),
+    rgba(255,255,255,.35)
+  );
 }
 .hero-content{
   position:relative;
@@ -79,37 +78,36 @@ nav a{
 }
 .hero h1{
   font-family:'Playfair Display',serif;
-  font-size:56px;
+  font-size:54px;
 }
 .hero p{
-  margin:20px 0 30px;
+  margin:18px 0 28px;
   max-width:520px;
 }
 .hero-buttons a{
   display:inline-block;
   margin-right:12px;
-  padding:13px 28px;
+  padding:12px 26px;
   border-radius:30px;
   text-decoration:none;
   background:var(--primary);
   color:#fff;
-  transition:.3s;
 }
-.hero-buttons a:hover{transform:translateY(-3px);}
 
-@keyframes heroSlide{
-  0%{background-image:url("https://images.pexels.com/photos/5061198/pexels-photo-5061198.jpeg");}
-  33%{background-image:url("https://images.pexels.com/photos/22809622/pexels-photo-22809622.jpeg");}
-  66%{background-image:url("https://images.pexels.com/photos/20683666/pexels-photo-20683666.jpeg");}
-  100%{background-image:url("https://images.pexels.com/photos/5061198/pexels-photo-5061198.jpeg");}
+/* HERO SLIDER */
+@keyframes slide{
+  0%{background-image:url("https://images.pexels.com/photos/5061198/pexels-photo-5061198.jpeg")}
+  33%{background-image:url("https://images.pexels.com/photos/22809622/pexels-photo-22809622.jpeg")}
+  66%{background-image:url("https://images.pexels.com/photos/20683666/pexels-photo-20683666.jpeg")}
+  100%{background-image:url("https://images.pexels.com/photos/5061198/pexels-photo-5061198.jpeg")}
 }
 
 /* SECTIONS */
-section{padding:90px 8%;}
+section{padding:90px 8%}
 h2{
   font-family:'Playfair Display',serif;
-  font-size:40px;
-  margin-bottom:18px;
+  font-size:38px;
+  margin-bottom:20px;
 }
 
 /* SHOWCASE */
@@ -122,14 +120,14 @@ h2{
   width:100%;
   height:300px;
   object-fit:cover;
-  border-radius:22px;
+  border-radius:20px;
   transition:.4s;
 }
-.showcase img:hover{transform:translateY(-6px);}
+.showcase img:hover{transform:translateY(-6px)}
 
-/* MENU */
+/* ================= MENU SECTION ================= */
 .menu-section{
-  background:var(--secondary);
+  background:var(--soft);
 }
 .menu-container{
   max-width:1200px;
@@ -160,8 +158,9 @@ h2{
   justify-content:space-between;
   background:#fff;
   padding:12px 18px;
-  border-radius:14px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.06);
+  font-size:14px;
   transition:.3s;
 }
 .menu-item:hover{
@@ -175,10 +174,7 @@ h2{
   grid-template-columns:1fr 1fr;
   gap:40px;
 }
-.contact-box i{
-  color:var(--primary);
-  margin-right:8px;
-}
+.contact-box i{color:var(--primary);margin-right:8px}
 iframe{
   width:100%;
   height:320px;
@@ -186,7 +182,7 @@ iframe{
   border-radius:20px;
 }
 
-/* FLOAT BUTTONS */
+/* FLOATING BUTTONS */
 .float-btn{
   position:fixed;
   right:20px;
@@ -196,9 +192,10 @@ iframe{
   font-size:20px;
   z-index:2000;
 }
-.call{bottom:90px;background:#4caf50;}
-.whatsapp{bottom:20px;background:#25d366;}
+.call{bottom:90px;background:#4caf50}
+.whatsapp{bottom:20px;background:#25d366}
 
+/* FOOTER */
 footer{
   text-align:center;
   padding:30px;
@@ -206,14 +203,15 @@ footer{
   border-top:1px solid #eee;
 }
 
+/* ANIMATIONS */
 @keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px);}
-  to{opacity:1;transform:translateY(0);}
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
 @media(max-width:768px){
-  .contact-box{grid-template-columns:1fr;}
-  .hero h1{font-size:44px;}
+  .contact-box{grid-template-columns:1fr}
+  .hero h1{font-size:42px}
 }
 </style>
 </head>
@@ -229,6 +227,7 @@ footer{
 </header>
 
 <section class="hero">
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <div>
       <h1>Scoop of Happiness</h1>
@@ -250,81 +249,80 @@ footer{
   </div>
 </section>
 
-<!-- ================= MENU SECTION ================= -->
+<!-- ✅ FULL MENU SECTION -->
 <section class="menu-section" id="menu">
-  <div class="menu-container">
-    <h2 style="text-align:center;">Our Menu</h2>
-    <p class="menu-subtitle">Crafted fresh. Served with love.</p>
+<div class="menu-container">
+<h2>Our Menu</h2>
+<p class="menu-subtitle">Crafted fresh. Served with love.</p>
 
-    <div class="menu-category">
-      <h3>Classic Gelato</h3>
-      <div class="menu-grid">
-        <div class="menu-item"><span>Naked Vanilla</span><span>₹60 / ₹150 / ₹300</span></div>
-        <div class="menu-item"><span>Cookies & Cream</span><span>₹60 / ₹150 / ₹300</span></div>
-        <div class="menu-item"><span>American Berry</span><span>₹60 / ₹150 / ₹300</span></div>
-        <div class="menu-item"><span>Malai Indulge</span><span>₹60 / ₹150 / ₹300</span></div>
-      </div>
-    </div>
+<div class="menu-category">
+<h3>Classic Gelato</h3>
+<div class="menu-grid">
+<div class="menu-item"><span>Naked Vanilla</span><span>₹60 / ₹150 / ₹300</span></div>
+<div class="menu-item"><span>Cookies & Cream</span><span>₹60 / ₹150 / ₹300</span></div>
+<div class="menu-item"><span>American Berry</span><span>₹60 / ₹150 / ₹300</span></div>
+<div class="menu-item"><span>Malai Indulge</span><span>₹60 / ₹150 / ₹300</span></div>
+</div>
+</div>
 
-    <div class="menu-category">
-      <h3>Premium & Extra Premium Gelato</h3>
-      <div class="menu-grid">
-        <div class="menu-item"><span>Lotus Biscoff Cream</span><span>₹90 / ₹220 / ₹400</span></div>
-        <div class="menu-item"><span>Swiss Vanilla Roasted Almond</span><span>₹90 / ₹220 / ₹400</span></div>
-        <div class="menu-item"><span>Belgian Chocolate</span><span>₹110 / ₹270 / ₹500</span></div>
-        <div class="menu-item"><span>Hazelnut Praline</span><span>₹110 / ₹270 / ₹500</span></div>
-      </div>
-    </div>
+<div class="menu-category">
+<h3>Premium & Extra Premium Gelato</h3>
+<div class="menu-grid">
+<div class="menu-item"><span>Lotus Biscoff Cream</span><span>₹90 / ₹220 / ₹400</span></div>
+<div class="menu-item"><span>Swiss Vanilla Roasted Almond</span><span>₹90 / ₹220 / ₹400</span></div>
+<div class="menu-item"><span>Belgian Chocolate</span><span>₹110 / ₹270 / ₹500</span></div>
+<div class="menu-item"><span>Hazelnut Praline</span><span>₹110 / ₹270 / ₹500</span></div>
+</div>
+</div>
 
-    <div class="menu-category">
-      <h3>Sorbettos (Vegan)</h3>
-      <div class="menu-grid">
-        <div class="menu-item"><span>Mango Tango</span><span>₹110 / ₹270 / ₹500</span></div>
-        <div class="menu-item"><span>Fruit Salsa</span><span>₹110 / ₹270 / ₹500</span></div>
-        <div class="menu-item"><span>Tangy Berry</span><span>₹110 / ₹270 / ₹500</span></div>
-      </div>
-    </div>
+<div class="menu-category">
+<h3>Sorbettos (Vegan)</h3>
+<div class="menu-grid">
+<div class="menu-item"><span>Mango Tango</span><span>₹110 / ₹270 / ₹500</span></div>
+<div class="menu-item"><span>Fruit Salsa</span><span>₹110 / ₹270 / ₹500</span></div>
+<div class="menu-item"><span>Tangy Berry</span><span>₹110 / ₹270 / ₹500</span></div>
+</div>
+</div>
 
-    <div class="menu-category">
-      <h3>Shakes & Coolers</h3>
-      <div class="menu-grid">
-        <div class="menu-item"><span>Classic Gelato Shake</span><span>₹120 - ₹200</span></div>
-        <div class="menu-item"><span>Premium Shake</span><span>₹140 - ₹220</span></div>
-        <div class="menu-item"><span>Fruit Cooler</span><span>₹160 - ₹240</span></div>
-      </div>
-    </div>
+<div class="menu-category">
+<h3>Shakes & Coolers</h3>
+<div class="menu-grid">
+<div class="menu-item"><span>Classic Gelato Shake</span><span>₹120 - ₹200</span></div>
+<div class="menu-item"><span>Premium Shake</span><span>₹140 - ₹220</span></div>
+<div class="menu-item"><span>Fruit Cooler</span><span>₹160 - ₹240</span></div>
+</div>
+</div>
 
-    <div class="menu-category">
-      <h3>Desserts & Specials</h3>
-      <div class="menu-grid">
-        <div class="menu-item"><span>Brownie Sundae</span><span>₹170</span></div>
-        <div class="menu-item"><span>Chocolate Romance</span><span>₹170</span></div>
-        <div class="menu-item"><span>Nutty Ride</span><span>₹170</span></div>
-        <div class="menu-item"><span>Hot Chocolate</span><span>₹80 - ₹150</span></div>
-      </div>
-    </div>
+<div class="menu-category">
+<h3>Desserts & Specials</h3>
+<div class="menu-grid">
+<div class="menu-item"><span>Brownie Sundae</span><span>₹170</span></div>
+<div class="menu-item"><span>Chocolate Romance</span><span>₹170</span></div>
+<div class="menu-item"><span>Nutty Ride</span><span>₹170</span></div>
+<div class="menu-item"><span>Hot Chocolate</span><span>₹80 - ₹150</span></div>
+</div>
+</div>
 
-  </div>
+</div>
 </section>
 
 <section id="contact">
-  <h2>Visit Us</h2>
-  <div class="contact-box">
-    <div>
-      <p><i class="fa-solid fa-location-dot"></i>
-      Shop 2, Ground Floor, Mooreshwar Tower, Ward T, MG Road, Mulund West, Mumbai</p>
-      <p><i class="fa-solid fa-phone"></i> 9769090200</p>
-      <p><i class="fa-brands fa-whatsapp"></i> 9769090200</p>
-    </div>
-    <iframe src="https://www.google.com/maps?q=Mooreshwar%20Tower%20Mulund%20West&output=embed"></iframe>
-  </div>
+<h2>Visit Us</h2>
+<div class="contact-box">
+<div>
+<p><i class="fa-solid fa-location-dot"></i> Shop 2, Ground Floor, Mooreshwar Tower, Ward T, MG Road, Mulund West, Mumbai</p>
+<p><i class="fa-solid fa-phone"></i> 9769090200</p>
+<p><i class="fa-brands fa-whatsapp"></i> 9769090200</p>
+</div>
+<iframe src="https://www.google.com/maps?q=Mooreshwar%20Tower%20Mulund%20West&output=embed"></iframe>
+</div>
 </section>
 
 <a class="float-btn call" href="tel:9769090200"><i class="fa-solid fa-phone"></i></a>
 <a class="float-btn whatsapp" href="https://wa.me/919769090200"><i class="fa-brands fa-whatsapp"></i></a>
 
 <footer>
-  <p><strong>Scoop Gelateria</strong> · Scoop of Happiness</p>
+<p><strong>Scoop Gelateria</strong> · Scoop of Happiness</p>
 </footer>
 
 </body>
